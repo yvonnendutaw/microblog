@@ -4,20 +4,22 @@
     {% if title %}
     <title>{{ title }} - microblog</title>
     {% else %}
-    <title>microblog</title>
-    {% endif %}
+    <title>Welcome to microblog</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css"> {% endif %}
 </head>
 
 <body>
-    <div>Microblog: <a href="/index">Home</a></div>
-    <div>Microblog: <a href="/login">login</a></div>
-    <hr> {% with messages = get_flashed_messages() %} {% if messages %}
-    <ul>
-        {% for message in messages %}
-        <li>{{ message }} </li>
-        {% endfor %}
-    </ul>
-    {% endif %} {% endwith %} {% block content %}{% endblock %}
+    <div>
+        <nav>
+            <li>Microblog: <a href="/index">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <hr> {% with messages = get_flashed_messages() %} {% if messages %}
+        </nav>
+    </div>
+    <hr> {% block content %}{% endblock %}
 </body>
 
 </html>
