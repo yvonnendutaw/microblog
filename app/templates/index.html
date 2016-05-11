@@ -8,11 +8,16 @@
 </head>
 
 <body>
+    <h1>Hi, {{ user.nickname }}!</h1> {% for post in posts %}
+    <div>
+        <p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p>
+    </div>
+    {% endfor %}
     <h1>
       guess the language
   </h1>
     <p>
-        think of your favpurite programming language. I am trying to guess it
+        think of your favourite programming language. I am trying to guess it
     </p>
     <p>
         ready? click <a href="/guess/0">here</a>
