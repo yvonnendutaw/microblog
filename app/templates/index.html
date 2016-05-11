@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    {% extends "base.html" %} {% block content %}
     <h1>Hi, {{ user.nickname }}!</h1> {% for post in posts %}
     <div>
         <p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p>
@@ -22,6 +23,7 @@
     <p>
         ready? click <a href="/guess/0">here</a>
     </p>
+    {% endblock %}
 </body>
 
 </html>
