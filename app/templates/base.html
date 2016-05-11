@@ -10,8 +10,16 @@
 <body>
     <nav>Microblog: <a href="/index">Home</a>
         <a href="/guess/0">Guess</a>
+        <a href="/login">Login</a>
     </nav>
-    <hr> {% block content %}{% endblock %}
+    <hr> {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}{% block content %}{% endblock %}
 </body>
+
 
 </html>
